@@ -1,0 +1,106 @@
+@font-face {
+    src: url("fonts/RoslindaleVariable[opsz\,slnt\,wdth\,wght]-Edu.woff2") format("woff2"),
+        url('fonts/RoslindaleVariable[opsz\,slnt\,wdth\,wght]-Edu.ttf') format('truetype');
+
+    font-family: 'Roslindale Variable';
+    font-style:  normal;
+    font-weight: normal;
+    }
+    *{
+      border: blue 3px dashed;  
+    } 
+    body{
+    background-color: #f5f4ef;
+    background-image: url('background-pattern.svg');
+    background-repeat: no-repeat;
+    /* overflow: hidden; */
+    font-family: 'Roslindale Variable';
+}
+/* how the page wrapper will appear on mobile */
+.page-wrapper{
+    width: min(100% - 3rem, 80ch);
+    margin-inline: auto;
+}
+/* how the page wrapper appears on desktop */
+
+@media only screen and (min-width:800px){
+.hero{
+display: grid;
+/* grid-gap: 25px; */
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+grid-template-rows: auto auto auto auto;
+grid-template-areas: 
+    " . . . . . p p . . . . . "
+    " . . . . . p p . . . . . "
+    " . . . . t t t t . . . . "
+    " . g . . t t t t . . b . "
+    " . g . . t t t t . . b . ";
+}
+
+
+.greenblob {
+grid-area: g;
+}
+
+.pinkblob{
+grid-area: p;
+}
+
+.blueblob {
+grid-area: b;
+}
+.hero-text {
+grid-area: t;
+}
+}
+/* CSS for the footer */
+footer{
+    background-color: #63cccf;
+}
+
+/* variable font animation */
+h3{
+    font-weight:20; 
+    text-align: center;
+    font-size: 5em;
+    animation: weightChange 7s infinite;
+}
+
+@keyframes weightChange {
+    0%, 100%{
+        font-variation-settings: "opsz" 48, "wdth" 100, "wght" 200, "slnt" 0;
+
+    }
+    50%{
+
+        font-variation-settings: "opsz" 48, "wdth" 100, "wght" 900, "slnt" 0;
+    }
+
+}
+
+/* variable font that changes on hover */
+.variable-font{
+    font-weight:1 ;
+    height:100vh;
+    font-size: 10em;
+    display:grid;
+    place-content: center;
+    margin: 0;
+    text-align: center;
+    font-variation-settings: "wght" 40, "wdth" 0, "XXXX" 1;
+    transition: 
+        font-weight 500ms,
+        font-variation-settings 3s;
+}
+
+.variable-font:hover{
+    font-weight:500 ;
+    height:100vh;
+    font-size: 7em;
+    display:grid;
+    place-content: center;
+    margin: 0;
+    text-align: center;
+    font-variation-settings: "wght" 120, "wdth" 0, "XXXX" 100;
+}
+
